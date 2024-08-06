@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<KeyinTree xmlns="http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd">
+
+    <RootKeyinTable ID="root">
+		<Keyword SubtableRef="Commands" CommandWord="Output">
+			<Options Required="true" />
+		</Keyword>
+		<Keyword SubtableRef="Commands2" CommandWord="yuanshen">
+			<Options Required="true" />
+		</Keyword>
+    </RootKeyinTable>
+
+    <SubKeyinTables>
+		<KeyinTable ID="Commands">
+			<Keyword SubtableRef="FromCmd" CommandWord="Words">
+				<Options Required="true" />
+			</Keyword>
+		</KeyinTable>
+		<KeyinTable ID="Commands2">
+			<Keyword CommandWord="run">
+				<Options Required="true" />
+			</Keyword>
+			<Keyword CommandWord="test">
+				<Options Required="true" />
+			</Keyword>
+			<Keyword CommandWord="work3">
+				<Options Required="true" />
+			</Keyword>
+			<Keyword CommandWord="work3_guanfang">
+				<Options Required="true" />
+			</Keyword>
+		</KeyinTable>
+
+        <KeyinTable ID="FromCmd">
+          <Keyword CommandWord="Success" />
+        </KeyinTable>
+
+    </SubKeyinTables>
+
+    <KeyinHandlers>
+		<KeyinHandler Keyin="Output Words Success"            Function="concrete_beam.Commands.OutputSuccess"/>
+		<KeyinHandler Keyin="yuanshen test"            Function="concrete_beam.Commands.test"/>
+
+		<!--（二）巩固练习-->
+		<KeyinHandler Keyin="yuanshen run"            Function="concrete_beam.Commands.YuanshenRun"/>
+
+		<!--（三）巩固练习-->
+		<KeyinHandler Keyin="yuanshen work3"            Function="concrete_beam.Commands.work3"/>
+
+		<!--（三）巩固练习官方代码-->
+		<KeyinHandler Keyin="yuanshen work3_guanfang"            Function="concrete_beam.Commands.work3_guanfang"/>   
+    </KeyinHandlers>
+
+</KeyinTree>
+
